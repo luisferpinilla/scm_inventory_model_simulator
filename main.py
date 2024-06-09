@@ -10,7 +10,6 @@ import numpy as np
 from inventory_models.periodic_order import run_simualation as run_periodic
 from inventory_models.reorder_point import run_simualation as run_reorder
 from inventory_models.demand_models import Normal_Demand
-from tqdm import tqdm
 import plotly.express as px
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
@@ -52,7 +51,7 @@ if submit:
                                             reorder_point=reorder_point,
                                             quantity_to_order=quantity_to_order,
                                             periods_to_simulate=periods_to_simulate,
-                                            leadtime=lead_time) for idsim in tqdm(range(replics))])
+                                            leadtime=lead_time) for idsim in range(replics)])
 
         periodic_df = pd.concat([run_periodic(sim_id=idsim,
                             initial_inventory=initial_inventory,
@@ -60,7 +59,7 @@ if submit:
                             maximun_inventory=maximun_inventory,
                             review_period=review_period,
                             periods_to_simulate=periods_to_simulate,
-                            leadtime=lead_time) for idsim in tqdm(range(replics))])
+                            leadtime=lead_time) for idsim in range(replics)])
     
     reorder_column, periodic_column = st.columns(2)
 
