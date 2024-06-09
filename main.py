@@ -21,7 +21,7 @@ st.set_page_config(page_title="Inventory Simulators", layout="wide")
 st.markdown(body="# General Parameters")
 
 demand_mean = st.number_input(label="Expected demand mean", min_value=0, value=50)
-demand_std = st.number_input(label="Expected standar deviation demand", min_value=0, value=5)
+demand_std = st.number_input(label="Expected standar deviation demand", min_value=0, value=25)
 replics= st.number_input(label="how many replics do you want to run?", min_value=100, max_value=500, value=200)
 initial_inventory = st.number_input(label="What is the initial inventory?", min_value=0, value= 500)
 periods_to_simulate = st.number_input(label="How many periods do you want to simulate?", min_value=0, value=52)
