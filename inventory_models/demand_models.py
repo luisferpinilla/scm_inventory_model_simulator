@@ -31,3 +31,15 @@ class Normal_Demand(Demand):
             value = np.random.normal(loc=self.mean, scale=self.std_dev)
         
         return value
+
+class Poisson_Demand(Demand):
+    
+    def __init__(self, mean:float):
+            
+        self.mean = mean
+        
+    def next_value(self) -> int:
+        
+        value = np.random.poisson(lam=self.mean)
+        
+        return value
